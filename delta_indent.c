@@ -19,6 +19,9 @@
 /*  Initialise linenum here  */  
 int lnum = 0;  
 
+/*  Previous indent  */  
+int previndent ; 
+
 
 /*  Find the indentation of a line  */  
 int indent(char *line) 
