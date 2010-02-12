@@ -1,11 +1,17 @@
 
  *** README  -  pdutils   ***  
 
- This project aims to produce public-domain versions of several 
-standard *nix utilities.  First will be either awk or grep.  
+This project aims to produce a few public-domain *nix utilities.  
+At present, there is a utility to check the indentation of a file. 
+
+Next will be a public-domain "readline" utility (with command history). 
+
+After that, an attempt will be made to do public-domain versions of awk 
+and grep.  Some code to help with this has already been found.  
 
 This code is released to the public domain.  
-
 "Share and enjoy....."   ;)  
+
+
 
   

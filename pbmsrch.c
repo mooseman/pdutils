@@ -65,11 +65,11 @@ char *strsearch(const char *string)
       return NULL;
 }
 
-#ifdef TEST
+
 
 #include <stdio.h>
 
-main()
+int main()
 {
       char *here;
       char *find_strings[] = {"abb", "you", "not", "it", "dad", "yoo", "hoo",
@@ -93,4 +93,4 @@ main()
       return 0;
 }
 
-#endif /* TEST */
+
