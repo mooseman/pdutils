@@ -27,15 +27,24 @@ void func2(void)
    printf("Hey, you entered bar! \n"); 
 } 
      
-
-void ctrl_g(void)
+void alt_a(void)
 { 
-   printf("Hey, you pressed CTRL g! \n"); 
+   printf("Hey, you pressed ALT a! \n"); 
+}   
+
+void alt_b(void)
+{ 
+   printf("Hey, you pressed ALT b! \n"); 
 }   
 
 void ctrl_a(void)
 { 
    printf("Hey, you pressed CTRL a! \n"); 
+}   
+
+void ctrl_g(void)
+{ 
+   printf("Hey, you pressed CTRL g! \n"); 
 }   
 
 void up_arrow(void)
@@ -94,11 +103,19 @@ int main(void)
       func2(); 
   } 
   
-   else if (!strcmp(word, "\007") ) { 
+   else if (!strcmp(word, "\x1b\x61") ) { 
+      alt_a(); 
+  } 
+  
+   else if (!strcmp(word, "\x1b\x62") ) { 
+      alt_b(); 
+  } 
+    
+   else if (!strcmp(word, "\x07") ) { 
       ctrl_g(); 
   } 
   
-   else if (!strcmp(word, "\001") ) { 
+   else if (!strcmp(word, "\x01") ) { 
       ctrl_a(); 
   }
       
