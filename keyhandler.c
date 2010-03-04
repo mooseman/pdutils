@@ -1,14 +1,14 @@
 
 
-/*  duh.c  */  
+/*  keyhandler.c  */  
 
 /*                                                     
-  Duh is a "dummy shell". Really just a do-while loop to test 
-  reading strings and acting on them.  
-  This is eventually aimed at testing a public-domain readline 
-  utility.   
-  This code is released to the public domain.                   
-*/ 
+  A simple program to handle keys (in particular, function keys, 
+  Ctrl keys, Alt keys and arrow keys). 
+  This code is released to the public domain. 
+  "Share and enjoy...."   ;)  
+*/                    
+
 
 #include <stdio.h>
 #include <stdlib.h>

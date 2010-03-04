@@ -1,17 +1,23 @@
 
  *** README  -  pdutils   ***  
 
-This project aims to produce a few public-domain *nix utilities.  
-At present, there is a utility to check the indentation of a file. 
+This project aims to produce (and find) a few public-domain *nix utilities.  
+At present, there are the following - 
 
-Next will be a public-domain "readline" utility (with command history). 
+*  A couple of grep utilities
+*  A couple of other search utilities 
+*  A public-domain version of readline 
+*  A calendar utility 
+*  A "b-tree" utility 
+*  A "day-of-week" utility 
+*  A public-domain version of the getch() function 
+*  A simple program (keyhandler.c) to handle function, ctrl, alt and arrow keys.  
+*  A word-count program 
+*  A utility to check the indentation of a file. 
 
-After that, an attempt will be made to do public-domain versions of awk 
-and grep.  Some code to help with this has already been found.  
+One of the things I'd most like to find (or do) is a public-domain versions of "awk".   
 
 This code is released to the public domain.  
 "Share and enjoy....."   ;)  
 
 
-
-  
