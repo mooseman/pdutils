@@ -26,7 +26,12 @@ typedef struct dict {
 /*  Function to return an array of structs. It takes no arguments */ 
 struct dict create(void);
 
-
+/*  Enter data into the dict.  */ 
+struct dict save(char *key, char *data) { 
+   
+   
+ 
+}      
 
 
      

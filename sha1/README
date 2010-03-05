@@ -1,0 +1,18 @@
+
+***  README -  sha1.c  ***  
+
+This is a public-domain implementation of SHA1, written by 
+Steve Reid.  Many thanks for doing this, Steve!  
+
+This program produces and outputs the SHA1 hash of a file 
+(or STDIN if no file is specified).  
+
+I've included the file "Vitai-Lampada.txt" to test the code with.  
+
+As Steve has mentioned, this code is released to the public domain.  
+
+"Share and enjoy...."    ;)  
+
+
+
+ 
