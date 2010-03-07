@@ -13,6 +13,7 @@ At present, there are the following -
 *  A public-domain version of the getch() function 
 *  A simple program (keyhandler.c) to handle function, ctrl, alt and arrow keys.  
 *  A word-count program 
+*  A simple tokeniser to split text into tokens 
 *  A utility to check the indentation of a file. 
 
 One of the things I'd most like to find (or do) is a public-domain versions of "awk".   
