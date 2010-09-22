@@ -4,7 +4,8 @@
 
 /*                                                     
   A small program to play around with input from files.  
-  In particular, tokenising lines from files.  
+  In particular, tokenising lines from files, and 
+  taking action if a particular token is found.  
   Usage:  ./test_io  testfile.txt  
   
   This code is released to the public domain.                   
@@ -19,6 +20,14 @@
 
 #define TABSIZE 8 ; 
 
+/*  A function to call if a given token */ 
+/*  is found.  */  
+void found(void)
+{  
+  printf("I found a 'small' token! \n"); 
+}           
+           
+           
             
 int main(int argc, char *argv[] ) 
 { 
@@ -46,6 +55,11 @@ int main(int argc, char *argv[] )
         { 
           /*  Print the tokens separated by newlines.  */    
           printf("Token is %s \n", tok);  
+          
+          /*  Take action if a given token is found. */ 
+          if ( !strcmp(tok, "small") ) { 
+          found(); 
+          }
              
           /* Now get the next token.  */       
           tok = strtok(NULL, " ");  
