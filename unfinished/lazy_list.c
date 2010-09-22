@@ -1,0 +1,29 @@
+
+
+/*  lazy_list.c  */  
+
+/*  Tryo to create a program which does a */ 
+/*  lazy list.  */  
+
+
+#include <stdio.h>
+#include <stdlib.h> 
+#include <string.h>
+#include <ctype.h>
+
+
+
+typedef struct llist { 
+  char *formula; 
+  char *keytype; 
+  char *valtype; 
+  keytype key; 
+  valtype val; 
+};     
+ 
+
+
+
+
+
+

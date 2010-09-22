@@ -100,16 +100,9 @@ struct change_indent(char *myline, int mylinenum)
      d_indent.curlinenum = mylinenum; 
      d_indent.curindent = myindent; 
      d_indent.chg_indent = 0; 
-        
+  }        
     
     
-    
-      
-  
-
-
-
-
             
 int main(int argc, char *argv[] ) 
 { 

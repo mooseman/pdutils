@@ -13,49 +13,91 @@
 #include <ctype.h> 
 
 
-/*  Define the array size  */  
-#define arrsize 5  
-
-
-/*  Our "dictionary" consists of an array of these elements.  */  
+/*  Our "dictionary" consists of a linked list. */  
 typedef struct dict {    
    char *key;
    char *data;   
-   struct *next;  
-};  
+   struct dict *next;  
+}list;  
 
 
-/*  Do a function to set the values of the struct  */  
-dict insert(char *key, char *data) {            
-    arr[x].key = key;
-    arr[x].data = data;     
-    return dict; 
+/*  Insert data into the dict.  */  
+list *dict_insert(list **l, char *mykey, char *mydata) {            
+    if (l == NULL)  return NULL; 
+    
+    list *n = malloc(sizeof(list)); 
+    if (n == NULL) return NULL; 
+    
+    n->next = *l; 
+    *l = n; 
+    
+    /*  Add the key and data  */  
+    n->key = mykey; 
+    n->data = mydata; 
+    
+    return *l ; 
 } 
-            
 
-/*  Find data, given a key in the dict  */     
-char find(char *key) {  
-    if arr.key == NULL { 
-       printf("Error: key not found"); 
-    } 
-    else { 
-       return arr.data; 
-    } 
+
+/*  Delete a dict  */  
+void dict_delete(list **l) 
+{ 
+   if (l != NULL && *l != NULL) 
+     {  
+        list *n = *l; 
+        *l = (*l)->next; 
+        free(n); 
+     } 
+}  
+
+
+/*  Find data, given a key   */  
+list **dict_find(list **n, char *mykey) { 
+   if (n == NULL)  return NULL; 
+   
+   while (*n != NULL) 
+   { 
+      if ( (*n)->key == mykey ) 
+         { 
+            return n;               
+         }     
+      n = &(*n)->next;  
+   } 
+   return NULL; 
 } 
 
-                              
+
+/*  Print the contents of a dict.  */  
+void dict_print(list *n) {  
+    if (n == NULL)  
+    { 
+       printf("No data in the dict.\n");    
+    }      
+    
+    while (n != NULL) 
+    { 
+       printf("Dict %p %p %p %p\n", n, n->next, n->key, n->data);
+	   n = n->next;
+	}
+}
+ 
+                               
 
 /*  Main   */  
 int main(void)  
 { 
+       
+  list *n = NULL;      
          
 /*  Store some data  */  
-insert("foo", "123"); 
-insert("bar", "456"); 
-insert("baz", "789"); 
+dict_insert(&n, "foo", "123"); 
+dict_insert(&n, "bar", "456"); 
+dict_insert(&n, "baz", "789"); 
 
 /*  Find some data  */  
-find("bar");   
+dict_find(&n, "bar");   
+    
+dict_print(n);     
     
 return 0; 
 
