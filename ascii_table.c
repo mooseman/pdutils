@@ -17,26 +17,20 @@
 
 void hline(int width)
 {  
-   char *cnr; 
-   char *mid; 
-   
-   cnr = '+' ; 
-   mid = '-' ; 
-   
-   line = strcat(cnr, mid*width, cnr);      
+   char *cnr = '+' ;  
+   char *mid = '-' ; 
+         
+   char *line = strcat(cnr, mid*width, cnr);      
    printf("%s", line); 
 } 
 
 
 void vline(int height)
 {  
-   char *cnr; 
-   char *mid; 
-   
-   cnr = '+' ; 
-   mid = '|' ; 
-   
-   line = strcat(cnr, mid*height, cnr);      
+   char *cnr = '+' ; 
+   char *mid = '|' ; 
+         
+   char *line = strcat(cnr, mid*height, cnr);      
    printf("%s", line); 
 } 
    

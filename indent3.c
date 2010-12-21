@@ -45,7 +45,7 @@ int indent(char *line)
         } 
      } 
             
-    printf("Indent is %d \n", indent);  
+    printf("Indent: %d \n", indent);  
     return indent; 
 } 
 
@@ -59,7 +59,7 @@ int linenum(char *line)
           lnum += 1; 
         }        
                
-    printf("Line number is %d \n", lnum);  
+    printf("Line: %d ", lnum);  
     return lnum; 
 }  
 
@@ -83,8 +83,8 @@ int main(int argc, char *argv[] )
     
   while ( fgets ( line, sizeof line, fp) != NULL )
     {         
-       indent(line);  
        linenum(line); 
+       indent(line);  
     }
 
   fclose(fp);    
