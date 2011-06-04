@@ -1,0 +1,22 @@
+All the full programs in Linux Application Development (the ones with
+line numbers in the book) have full source code listed here; only the
+short fragments (without line numbers) are not available online.
+
+We have placed this source code in the public domain.  Use it in any
+project, free or commercial.  No rocket science is involved; these
+programs are all simple demonstrations of system functionality.  Of
+course, we would appreciate some sort of citation if you use a substantial
+amount of our code in your project, at your complete discretion.
+
+The authors and publisher have taken care in preparation of this source
+code, but make no expressed or implied warranty of any kind and assume
+no responsibility for errors or omissions. No liability is assumed for
+incidental or consequential damages in connection with or arising out
+of the use of the information or programs contained herein.
+
+The major difference between this source code and the source code in
+many other books is that we have made an attempt to catch all reasonable
+errors. If you find that we have missed an error condition that you know
+for a fact could occur in some situation, or that you have experienced,
+please send us email at lad-comments@awl.com and give us as many details
+as possible.
