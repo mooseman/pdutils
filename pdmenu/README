@@ -1,0 +1,15 @@
+
+ ***  pdmenu  -  Tool to create menus without using curses  ***  
+
+The pdmenu.c code is aimed at helping those who would like to    
+create command-line menus without using the curses library.     	     
+It creates a count variable (which could be used to    
+keep track of which item is highlighted). Using the      
+up and down arrow keys increments and decrements the   
+count variable. Finally, when you press Enter, the      
+value of the count variable is printed and the program   
+exits.                                                
+       
+ This code is released to the public domain.        
+ "Share and enjoy...."  ;)                                 
+

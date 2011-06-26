@@ -18,13 +18,11 @@
 int isuscoreoralpha(char ch)  
 { 
    return ( (ch == '_') || isalpha(ch) ) ; 
-   return -1; 
 } 
 
 int isuscoreoralnum(char ch) 
 { 
-   return ( (ch == '_') || isalnum(ch) ) ; 
-   return -1; 
+   return ( (ch == '_') || isalnum(ch) ) ;    
 } 
 
 
