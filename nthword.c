@@ -21,7 +21,7 @@ void nthword(char *str, int num)
   /* Counter for the string number. */ 
   int strnum=0;    
   
-  /* Pointer to character after *str. */ 
+  /* Pointer to character before *str. */ 
   /* Used to find first character of string. */  
   char *prev; 
   prev = NULL;   
