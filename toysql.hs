@@ -1,5 +1,9 @@
 -- toysql.hs   
-
+-- This code is aimed at parsing phrases like the 
+-- following -  
+-- select * from mytable where city = "Sydney"; 
+-- select foo, bar from mytable where var1 > 10; 
+-- select baz from mytable; 
 -- This code is released to the public domain.  
 -- "Share and enjoy....."  ;)  
 
@@ -44,10 +48,18 @@ whereStmt = do{ WHERE
               }  
               
 condStmt = multiCondstmt <|> singleCondstmt 
-singleCondstmt = do{ singlevar 
+singleCondstmt = singleCondstmtnoparens <|> singleCondstmtwithparens 
+
+singleCondstmtnoparens = do{ 
+                   ; singlevar 
                    ; OP 
-                   ; value 
+                   ; value                    
                    }  
+
+singleCondstmtwithparens = do( 
+                   ;  char '(' 
+                   ;  singleCondstmtnoparens 
+                   ;  char ')'  
                    
 multiCondstmt = sepBy singleCondstmt ( AND <|> OR )  
 

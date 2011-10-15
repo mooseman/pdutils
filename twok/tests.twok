@@ -1,0 +1,623 @@
+### 42 trivial
+def __main__():
+return 42
+### 0 trivial 2
+def __main__():
+pass
+### -1 line 3, col 9
+def __main__():
+return 33
+return 99
+### 44 more exprs
+def __main__():
+print 33
+print 99
+print 99
+return 44
+### -1 line 1, col 8
+def ab cd():
+return 33
+### 0 blank lines
+def __main__():
+return 0
+
+
+### 1 simple if 0
+def __main__():
+if 2:
+return 1
+return 0
+
+### 0 simple if 1
+def __main__():
+if 0:
+return 1
+return 0
+
+### 1 simple if 2
+def __main__():
+if 2 < 9999999:
+return 1
+return 0
+
+### 0 simple if 3
+def __main__():
+if 9999999 < 2:
+return 1
+return 0
+
+### 0 simple if 4
+def __main__():
+if 2 < 2:
+return 1
+return 0
+
+### 1 simple if 5
+def __main__():
+if 100 <= 100:
+return 1
+return 0
+
+### 1 simple if 6
+def __main__():
+if 101 <= 100:
+return 0
+return 1
+
+### 999 simple if 6
+def __main__():
+if 101 >= 100:
+return 999
+return 1
+
+### 13 comment 0
+# this is a comment
+def __main__():
+# this is another, indented
+return 13
+
+### 13 comment 1
+def __main__(): # suffix comment
+return 13 # another
+# more
+
+
+### 1 elif 0
+def __main__():
+if 1:
+return 1
+elif 1:
+return 2
+return 3
+
+### 2 elif 1
+def __main__():
+if 0:
+return 1
+elif 1:
+return 2
+return 3
+
+### 3 elif 2
+def __main__():
+if 0:
+return 1
+elif 0:
+return 2
+return 3
+
+### 4 elif 3
+def __main__():
+if 0:
+return 1
+elif 1:
+pass
+elif 1:
+return 3
+return 4
+
+### -1 expecting lval
+def __main__():
+4 = 5
+
+### 20710 no val return
+def __main__():
+return
+
+### 20710 ret after noval ret
+def __main__():
+return
+return 19
+
+### 41 assign
+def __main__():
+x = 41
+999
+return x
+
+### 0 assign, no ret
+def __main__():
+x = 41
+
+### 123 assign two vars
+def __main__():
+x = 123
+y = x
+x = 999
+return y
+
+### -1 DISABLED uninitialized local
+def __main__():
+y = x
+
+### -1 DISABLED uninitialized local
+def __main__():
+if 0:
+x = 5
+else:
+y = x
+return y
+
+### 10 two funcs
+def stuff():
+pass
+def __main__():
+return 10
+
+### 19 call func
+def stuff():
+return 19
+def __main__():
+x = 15
+return stuff()
+
+### 765 call func 2
+def stuff():
+return 765
+def __main__():
+x = 15
+y = stuff()
+z = 12
+return y
+
+### 3 basic or
+def __main__():
+return 0 or 3
+
+### 19 basic or 2
+def __main__():
+return 0 or 19 or 3
+
+### 10 basic or 3
+def __main__():
+return 10 or 19 or 3
+
+### 0 basic or 4
+def __main__():
+return 0 or 0
+
+### 1 basic or 5
+def __main__():
+return 1 or 15
+
+### 15 basic or 6
+def __main__():
+return 0 or 0 or 15
+
+### 1 basic or 7
+def __main__():
+return 1 or 0 or 0 or 0 or 15
+
+### 33 if with or
+def __main__():
+if 0 or 1:
+return 33
+return 0
+
+### 0 basic and 0
+def __main__():
+return 1 and 0
+
+### 11 basic and 1
+def __main__():
+return 1 and 11
+
+### 0 basic and 2
+def __main__():
+return 46 and 0 and 1
+
+### 91 basic and 3
+def __main__():
+return 46 and 1 and 1 and 91
+
+### 0 basic not 0
+def __main__():
+return not 1
+
+### 0 basic not 1
+def __main__():
+return not 453
+
+### 1 basic not 2
+def __main__():
+return not 0
+
+### 1 basic not 3
+def __main__():
+return not 4 or not 0
+
+### 2 add 0
+def __main__():
+return 1+1
+
+### 1387 add 1
+def __main__():
+return 43+10+100+1234
+
+### -10 sub 0
+def __main__():
+return 10-20
+
+### -110 sub 1
+def __main__():
+return 100 - 200 - 10
+
+### 15 mul 0
+def __main__():
+return 3*5
+
+### 2000 mul 1
+def __main__():
+return 20*100
+
+### 31 combined math 0
+def __main__():
+return 2*5+7*3
+
+### 15 bitor 0
+def __main__():
+return 7 | 8
+
+### 15 bitand 0
+def __main__():
+return 255 & 15
+
+### 0 bitxor 0
+def __main__():
+return 255 ^ 255
+
+### 20 div 0
+def __main__():
+return 200 / 10
+
+### -20 div 1 neg
+# no unary - or grouping () yet!
+def __main__():
+return -200 / 10
+
+### 20 mod 0
+def __main__():
+return 120 % 50
+
+### -20 mod 1
+def __main__():
+return -120 % 50
+
+### 0 mod 2
+def __main__():
+return -120 % 20
+
+### 255 not 0
+def __main__():
+return ~0 & 255
+
+### -2 not 1
+def __main__():
+return ~0 - 1
+
+### 123 unary +
+def __main__():
+return +123
+
+### 80 non-parens
+def __main__():
+return 100-220 % 100
+
+### -20 parens
+def __main__():
+return (100-220) % 100
+
+### -1 ')' expected
+def __main__():
+return (100 % 100
+
+### -1 got ')'
+def __main__():
+)
+
+### 384 reg usage
+def __main__():
+return ((1+1) * (2+2)) * ((3+3) * (4+4))
+
+### -5 C ffi 0
+extern test0
+def __main__():
+return test0(2, 7)
+
+### 1234 C ffi 1
+extern test1
+def __main__():
+return test1(1, 2, 3, 4)
+
+### 87651234 C ffi 2
+extern test2
+def __main__():
+return test2(1, 2, 3, 4, 5, 6, 7, 8)
+
+### 1 C ffi 3
+extern test3
+def __main__():
+return test3(100000000, 200000000, 3000000000, 4000000000000, 4000000000000, 3000000000, 200000000, 100000000)
+
+### 44 func args
+def stuff(x):
+return x * 11
+def __main__():
+return stuff(4)
+
+### 1344 func args 2
+extern test1
+def stuff(x, y):
+return x + y + test1(1, 2, 3, 4)
+def __main__():
+return stuff(10, 100)
+
+### 1234 extra indent
+# note, whitespace after return stmt, indented
+def __main__():
+return 1234
+
+
+### 0 short ident not kw
+def stuff(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z):
+pass
+def __main__():
+pass
+
+### 1 func ptrs
+extern test5
+extern test6
+def __main__():
+L = test5
+return test6(L)
+
+### 1 addr of
+def stuff(a, b):
+x = a != 0
+y = a != b
+return x and y
+def __main__():
+L = 0
+return stuff(@L, L)
+
+### 2 basic list
+def __main__():
+L = 0
+listaddr_push(@L, 1)
+listaddr_push(@L, 2)
+return len(L)
+
+### 0 simple mempush/pop
+def __main__():
+mempush()
+mempop()
+
+### 0 simple mempush/pop 2
+def __main__():
+mempush()
+L = 0
+listaddr_push(@L, 1)
+listaddr_push(@L, 2)
+mempop()
+
+### 1 list syntax 0
+def __main__():
+L = []
+listaddr_push(@L, 5)
+return len(L)
+
+### 1 list syntax 0
+def __main__():
+L = [888]
+return len(L)
+
+### 3 list syntax 0
+def __main__():
+L = [777, 888, 999]
+return len(L)
+
+### 13 expr in call
+def functest(n):
+return n
+def __main__():
+x = 14
+return functest(x-1)
+
+### 233 fib(13)
+def fib(n):
+if n <= 0:
+return 0
+elif n <= 1:
+return 1
+else:
+return fib(n-1) + fib(n-2)
+def __main__():
+return fib(13)
+
+### 102334155 DISABLED (just a bit too slow) fib(40)
+def fib(n):
+if n <= 0:
+return 0
+elif n <= 1:
+return 1
+else:
+return fib(n-1) + fib(n-2)
+def __main__():
+return fib(40)
+
+### 6 std range
+def __main__():
+return len(range(6))
+
+### 4 list []
+def __main__():
+return range(6)[4]
+
+### -1 expecting subscript
+def __main__():
+return range(6)[]
+
+### 15 simple for
+def __main__():
+y = 0
+for x in range(6):
+y = y + x
+return y
+
+### 6 simple for 2
+def __main__():
+y = 0
+for x in [3, 2, 1]:
+y = y + x
+return y
+
+### 14 string 0
+def __main__():
+return len("abcdefghijklmn")
+
+### 16 string 1
+def __main__():
+return len("a\bcdefghijklm\n\r\t")
+
+### 960 utf-8 decode
+def __main__():
+return "λ(x) = π"[7]
+
+### 2 dereference
+def __main__():
+L = [1, 2, 3]
+x = @L
+y = x[0]
+return y[1]
+
+### 10 question in symbols
+def stuff(a?,b,?c,?d?):
+return a? + b + ?c + ?d?
+def __main__():
+return stuff(1,2,3,4)
+
+### 0 comment indented
+def blah():
+pass
+# stuff
+def __main__():
+return blah()
+
+### 0 comment indented 2
+def blah():
+pass
+# stuff
+def __main__():
+return blah()
+
+### 0 comment indented 3
+def blah():
+pass
+# stuff
+def __main__():
+return blah()
+
+### 0 ws indented
+# note whitespace indented to match indent of 'pass' below
+def blah():
+pass
+
+def __main__():
+return blah()
+
+### 0 spaces after end
+def __main__():
+pass
+
+### 1 *args
+def blah(one, *args):
+return one == 1 and len(args) == 5
+def __main__():
+return blah(1,6,7,8,4,3)
+
+### 1 *args 2
+def blah(one, *args):
+return one == 1 and args[0] == 6 and args[1] == 7 and args[2] == 8 and args[3] == 4 and args[4] == 3
+def __main__():
+return blah(1,6,7,8,4,3)
+
+### 1 *args 3
+def blah(a,b,c,d,*efg):
+return a==10 and b==20 and c==30 and d==40 and len(efg) == 3 and efg[1] == 60
+def __main__():
+return blah(10, 20, 30, 40, 50, 60, 70)
+
+### 1 *args 4
+def blah(*args):
+return len(args) == 3 and args[1] == 20 and args[2] == 30
+def __main__():
+return blah(10, 20, 30)
+
+### 3 list rev
+def __main__():
+a = [1, 2, 3, 4]
+reverse(a)
+return a[1]
+
+### 5 list rev 2
+def __main__():
+a = [1, 2, 3, 4, 5]
+reverse(a)
+return a[0]
+
+### 1 list shift
+def __main__():
+a = [99, 1, 2, 3, 4, 5]
+x = shift(a)
+return x == 99 and len(a) == 5
+
+### 1 list unshift
+def __main__():
+a = [1, 2, 3, 4]
+listaddr_unshift(@a, 99)
+return a[0] == 99 and len(a) == 5 and a[4] == 4
+
+### 1100 class 0
+class Stuff: x, y, z
+def __main__():
+v = Stuff(100, 1000, 10000)
+return v.Stuff_x + v.Stuff_y
+
+### 1 class 1
+class Stuff: x, y, z
+def __main__():
+v = Stuff(100, 1000, 10000)
+return Stuff?(v)
+
+### 0 class 2
+class Stuff: x, y, z
+class Things: x, y, z
+def __main__():
+a = Stuff(100, 1000, 10000)
+b = Things(100, 1000, 10000)
+return Stuff?(b) or Things?(a)
+
+### 99999 END
+# vim: set ft=python:
+
+

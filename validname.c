@@ -36,15 +36,15 @@ void validname(const char* str)
   for (i=0; i<strlen(str); i++) 
   {     
      if (!isuscoreoralpha(str[0]) ) 
-        { puts("Invalid first character. \n");   
+        { printf("%s has invalid first character.\n", str);   
           err += 1; 
           break; } 
      else if (!isuscoreoralnum(str[i]) ) 
-        { puts("Non-letter-or-underscore found. \n");  
+        { printf("%s : Non-letter-or-underscore found.\n", str);  
           err += 1;       
           break; }                           
   }     
-   if (err == 0) puts("This is a valid name. \n");    
+   if (err == 0) printf("%s is a valid name.\n", str);    
 }
 
 

@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <ctype.h> 
 #include <string.h> 
+#include <stdlib.h> 
  
  
 static struct termios old, new;
@@ -69,11 +70,21 @@ char testgetch(void) {
 }      /*  testgetch()  */      
 
 
+/* Return the length of a keycode. */ 
+char *control(void)
+{  
+   char ch; 
+   ch = getch();     
+   if ( iscntrl(ch) ) return "Yes"; 
+   else return "No";    
+} 
+  
+
 /* Let's test it out */
 int main() {
-    int key = getch();
-    printf("\nYou typed: %d\n", key);    
-    printf("\nYou typed: %c\n", key);     
+    
+    char *mykey = control();                                
+    printf("\nIs it a control key?: %s\n", mykey);    
     return 0; 
     
 } 

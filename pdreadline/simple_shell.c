@@ -1,27 +1,21 @@
 
 
-/*  simple_shell.c  */  
-/*  An ultra-simple shell to test reading command history and */ 
-/*  simple line editing. */  
-/*  This code is based on ladsh4.c  */  
+/*  simple_shell.c                                             */  
+/*  An ultra-simple shell to test reading command history and  */ 
+/*  simple line editing.                                       */  
+/*  This code is released to the public domain.                */ 
+/*  "Share and enjoy...."  ;)                                  */ 
  
 
-#include <ctype.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <glob.h>
-#include <signal.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <sys/ioctl.h>
-#include <sys/wait.h>
-#include <unistd.h>
 #include <termios.h>
-#include <ctype.h> 
+#include <ctype.h>
 
 
- 
+/* This implementation of getch() is from here - */ 
+/* http://wesley.vidiqatch.org/                  */ 
+/* Thanks, Wesley!                               */  
 static struct termios old, new;
 
 /* Initialize new terminal i/o settings */
@@ -38,30 +32,50 @@ void resetTermios(void) {
     tcsetattr(0, TCSANOW, &old);
 }
 
-/* Read 1 character - echo defines echo mode */
-char getch_(int echo) {
-    char ch;
-    initTermios(echo);
-    ch = getchar();
+/* Read 1 character */
+/* If we read a Ctrl key, Alt key or arrow key, we do not echo. */ 
+/* Otherwise, we do. */ 
+
+char getch_(void) {
+    char ch; 
+    ch = getchar();  
+    /* Test for the character type so we can decide whether to */ 
+    /* echo or not. */ 
+    if (isprint(ch) ) {initTermios(1);} 
+    else {initTermios(0); }      
     resetTermios();
     return ch;
 }
 
-/* Read 1 character without echo */
-char getch(void) {
-    return getch_(0);
-}
-
-/* Read 1 character with echo */
-char getche(void) {
-    return getch_(1);
-}
 
 
 /*  If the key pressed is an arrow key, backspace or a */ 
 /* function key, do not echo it. Otherwise, echo it.   */       
-
-
+void isarrow(void)
+{ 
+  int key = getch_();  
+  
+  if(key == 10) 
+     { puts("You pressed ENTER! \n"); }    
+  
+  if(key == 27)  
+     { key = getch_(); 
+         if(key == 91) 
+             key = getch_(); 
+             if(key == 65)                              
+               { puts("You pressed up arrow! \n"); 		         
+               }  
+             else if(key == 66)                              
+               { puts("You pressed down arrow! \n"); 		         
+               }  
+             else if(key == 67)                              
+               { puts("You pressed right arrow! \n"); 		         
+               }  
+             else if(key == 68)                              
+               { puts("You pressed left arrow! \n"); 		         
+               }                                   
+          }          
+}     
 
 
 
@@ -69,27 +83,19 @@ char getche(void) {
 
 
 int main() 
-{
-               
-    char word[80];  
+{               
             
     while (1) {
     /*  Get keystrokes here  */  
      
     printf("@> ");                         
-    scanf("%s", word);   
-                                  
-             
-    if (!strcmp(word, "\x1b\x5b\x41") ) { 
-    printf("You pressed the up arrow! \n"); }  
-    
-    else if (!strcmp(word, "quit") ) {            
-      break; 
+                                    
+    isarrow();                                                         
+                
     }     
                          
- }
-
-    return 0;
+    return 0; 
+    
 }
 
 

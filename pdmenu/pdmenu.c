@@ -69,25 +69,31 @@ int main(void)
     {  
                    
       int key = getch(); 
-                                                                 
-      /* The down arrow has the numbers 27, 91, 66. */ 
-      /* Up arrow is 27, 91, 65.                    */    
-      
+                                                                       
+      /* Up arrow is 27, 91, 65.    ( ESC [ A )   */   
+      /* Down arrow is 27, 91, 66.  ( ESC [ B )   */ 
+      /* Right arrow is 27, 91, 67. ( ESC [ C )   */ 
+      /* Left arrow is 27, 91, 68.  ( ESC [ D )   */              
       if(key == 27)  
           {   key = getch(); 
               if(key == 91) 
               key = getch(); 
-              if(key == 66)                              
-               { puts("You pressed down arrow! \n"); 
-		         menunum+=1; 
-                 printf("Menunum is now %d \n", menunum);  
-               }  
-              else if(key == 65)                              
+              if(key == 65)                              
                { puts("You pressed up arrow! \n"); 
 		         menunum-=1; 
                  printf("Menunum is now %d \n", menunum);  
                }  
-                 
+              else if(key == 66)                              
+               { puts("You pressed down arrow! \n"); 
+		         menunum+=1; 
+                 printf("Menunum is now %d \n", menunum);  
+               }  
+              else if(key == 67)                              
+               { puts("You pressed right arrow! \n"); 		         
+               }  
+              else if(key == 68)                              
+               { puts("You pressed left arrow! \n"); 		         
+               }                
           }
                                                           
     /* The Enter key exits. Enter is 10 decimal */	  
