@@ -4,9 +4,9 @@
 This project aims to produce (and find) a few public-domain *nix utilities.  
 At present, there are the following - 
 
+*  A small utility to check if a file exists in the current directory.  
 *  A couple of grep utilities
 *  A couple of other search utilities 
-*  A public-domain version of readline 
 *  A calendar utility 
 *  A "b-tree" utility 
 *  A "day-of-week" utility 
